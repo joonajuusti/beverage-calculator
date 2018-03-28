@@ -1,0 +1,67 @@
+<form (ngSubmit)="submitPurchase(purchaseForm)" #purchaseForm="ngForm">
+  <div class="form-group">
+    <label for="store">Store</label>
+    <input
+      type="text"
+      class="form-control"
+      id="store"
+      placeholder="Store"
+      required
+      [ngModel]
+      name="store">
+    <br>
+    <label for="date">Date</label>
+    <input
+      type="datetime-local"
+      id="date"
+      class="form-control"
+      [ngModel]
+      name="date"
+      required>
+    <br>
+    <label for="store">Pepsi Amount</label>
+    <input
+      type="number"
+      class="form-control"
+      id="pepsiAmountInLitres"
+      placeholder="Pepsi Amount"
+      [ngModel]
+      name="pepsiAmountInLitres">
+    <br>
+    <label for="store">Pepsi Price</label>
+    <input
+      type="number"
+      class="form-control"
+      id="pepsiPriceInPurchase"
+      placeholder="Store"
+      [ngModel]
+      name="pepsiPriceInPurchase">
+    <br>
+    <label for="store">Monster Amount</label>
+    <input
+      type="number"
+      class="form-control"
+      id="monsterAmountInCans"
+      placeholder="Monster Amount"
+      [ngModel]
+      name="monsterAmountInCans">
+    <br>
+    <label for="store">Monster Price</label>
+    <input
+      type="number"
+      class="form-control"
+      id="monsterPricePerCan"
+      placeholder="Monster Price"
+      [ngModel]
+      name="monsterPricePerCan">
+    <br>
+  <button
+  class="btn btn-primary"
+  type="submit"
+  [disabled]="!purchaseForm.valid">Add Purchase</button>
+  <button
+  class="btn btn-danger"
+  type="button"
+  (click)="clear(purchaseForm)">Clear Form</button>
+  </div>
+</form>

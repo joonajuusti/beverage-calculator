@@ -1,0 +1,23 @@
+<article class="panel panel-default">
+  <div class="panel-heading">
+    {{ purchase.store }}, {{ purchase.date }},
+    <a (click)="onDelete()">Delete</a>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-3">
+        {{ purchase.pepsiAmountInLitres }}
+      </div>
+      <div class="col-md-3">
+        {{ purchase.pepsiPriceInPurchase}}
+      </div>
+      <div class="col-md-3">
+        {{ purchase.monsterAmountInCans }}
+      </div>
+      <div class="col-md-3">
+        {{ purchase.monsterPricePerCan }}
+      </div>
+    </div>
+  </div>
+
+</article>
