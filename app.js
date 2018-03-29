@@ -8,6 +8,7 @@ var mongoose = require('mongoose');
 
 var appRoutes = require('./routes/app');
 var purchaseRoutes = require('./routes/purchases');
+var storeRoutes = require('./routes/stores');
 
 var app = express();
 mongoose.connect('mongodb://localhost:27017/beverage-calc');
@@ -31,6 +32,7 @@ app.use(function (req, res, next) {
     next();
 });
 
+app.use('/store', storeRoutes);
 app.use('/purchase', purchaseRoutes);
 app.use('/', appRoutes);
 

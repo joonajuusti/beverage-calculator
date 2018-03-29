@@ -10,6 +10,8 @@ import { PurchaseFormComponent } from './components/purchase-form.component';
 import { PurchaseComponent } from './components/index';
 import { PurchaseList } from './components/purchase-list.component';
 import { PurchaseService } from './Services/purchase.service';
+import { StoreService } from './Services/store.service';
+import { StoreFormComponent } from './Components/store-form.component';
 
 @NgModule({
   imports: [
@@ -25,11 +27,13 @@ import { PurchaseService } from './Services/purchase.service';
     PurchaseBoxComponent,
     PurchaseFormComponent,
     PurchaseComponent,
-    PurchaseList
+    PurchaseList,
+    StoreFormComponent
   ],
 
   providers: [
-    PurchaseService
+    PurchaseService,
+    StoreService
   ],
 
   exports:[
