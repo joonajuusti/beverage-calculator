@@ -1,67 +1,73 @@
 <form (ngSubmit)="submitPurchase(purchaseForm)" #purchaseForm="ngForm">
-  <div class="form-group">
-    <label for="store">Store</label>
-    <input
-      type="text"
-      class="form-control"
-      id="store"
-      placeholder="Store"
-      required
-      [ngModel]
-      name="store">
-    <br>
-    <label for="date">Date</label>
-    <input
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="store">Store</label>
+      <select
+        class="form-control"
+        required
+        [ngModel]
+        name="species">
+        <option
+          *ngFor="let store of stores"
+          [ngValue]="store">{{ store }}</option>
+      </select>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="date">Date</label>
+      <input
       type="datetime-local"
-      id="date"
       class="form-control"
       [ngModel]
       name="date"
       required>
-    <br>
-    <label for="store">Pepsi Amount</label>
-    <input
+    </div>
+  </div>
+  <br>
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="store">Pepsi Amount</label>
+      <input
       type="number"
       class="form-control"
-      id="pepsiAmountInLitres"
       placeholder="Pepsi Amount"
       [ngModel]
       name="pepsiAmountInLitres">
-    <br>
-    <label for="store">Pepsi Price</label>
-    <input
+    </div>
+    <div class="form-group col-md-3">
+      <label for="store">Pepsi Price</label>
+      <input
       type="number"
       class="form-control"
-      id="pepsiPriceInPurchase"
       placeholder="Store"
       [ngModel]
       name="pepsiPriceInPurchase">
-    <br>
-    <label for="store">Monster Amount</label>
-    <input
+    </div>
+    <div class="form-group col-md-3">
+      <label for="store">Monster Amount</label>
+      <input
       type="number"
       class="form-control"
-      id="monsterAmountInCans"
       placeholder="Monster Amount"
       [ngModel]
       name="monsterAmountInCans">
-    <br>
-    <label for="store">Monster Price</label>
-    <input
+    </div>
+    <div class="form-group col-md-3">
+      <label for="store">Monster Price</label>
+      <input
       type="number"
       class="form-control"
-      id="monsterPricePerCan"
       placeholder="Monster Price"
       [ngModel]
       name="monsterPricePerCan">
-    <br>
-  <button
-  class="btn btn-primary"
-  type="submit"
-  [disabled]="!purchaseForm.valid">Add Purchase</button>
-  <button
-  class="btn btn-danger"
-  type="button"
-  (click)="clear(purchaseForm)">Clear Form</button>
+    </div>
   </div>
+  <div class="button-margin">
+    <button
+    class="btn btn-primary"
+    type="submit"
+    [disabled]="!purchaseForm.valid">Add Purchase</button>
+  <button
+    class="btn btn-danger"
+    type="button"
+    (click)="clear(purchaseForm)">Clear Form</button></div>
 </form>
